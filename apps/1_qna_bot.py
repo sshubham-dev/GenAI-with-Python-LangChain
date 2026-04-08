@@ -11,5 +11,9 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 while True:
     query = input("User: ")
+    if query.lower() in ["quit","exit","bye"]:
+        print("GoodBye")
+        break
+
     result = llm.invoke(query)
     print(result.content)
